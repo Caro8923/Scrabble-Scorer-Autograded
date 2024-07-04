@@ -84,7 +84,7 @@ const scoringAlgorithms = [
       scorerFunction: oldScrabbleScorer
    },
    
-];
+]; 
 
 function scorerPrompt() {
    let choice = input.question("Which scoring option would you like to choose? \n0 = Simple Scorer: One point per character \n1 = Vowel Bonus Scorer: Vowels are worth 3 points \n2 = Scrabble Scorer: Uses scrabble point system \nEnter 0, 1, or 2: ")
