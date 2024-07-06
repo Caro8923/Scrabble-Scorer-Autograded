@@ -40,8 +40,21 @@ function initialPrompt() {
    return ans;
 };
 
+function transform(oldPointStructure) {
+   let newPointStructure = {};
+   for (let key in oldPointStructure) {
+      let arrayValue = oldPointStructure[key];
 
-let newPointStructure;
+      for (i=0; i < arrayValue.length; i++) {
+         let newKey = arrayValue[i].toLowerCase();
+         newPointStructure[newKey] = key;
+      }
+   }
+    return newPointStructure;
+}
+
+let newPointStructure = transform(oldPointStructure);
+console.log(newPointStructure);
 
 let simpleScorer = function(word) {
    let letterPoints = word.length;
@@ -93,7 +106,6 @@ function scorerPrompt() {
    return choice
 }
 
-function transform() {};
 
 function runProgram() {
    initialPrompt();
